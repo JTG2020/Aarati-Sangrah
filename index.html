@@ -10,31 +10,25 @@
     <style>
         body {
             font-family: 'Mukta', sans-serif;
-            background-color: #fff3e0; /* Light orange background */
-            color: #7a4f27; /* Dark brown text for contrast */
+            background-color: #fce4ec; /* Light pink/peach background */
+            color: #4b3f33; /* Dark brown text */
             line-height: 1.6;
             margin: 0;
-            padding: 20px 10px;
-            box-sizing: border-box;
-            background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Lord_Ganesha_silhouette.svg/1024px-Lord_Ganesha_silhouette.svg.png');
-            background-repeat: repeat;
-            background-size: 150px;
-            opacity: 0.1;
+            padding: 20px 10px; /* Added some horizontal padding for mobile */
+            box-sizing: border-box; /* Ensures padding is included in width calculation */
         }
         .container {
             max-width: 900px;
             margin: 0 auto;
             padding: 30px;
-            background-color: #fcf5e7; /* Off-white container for readability */
+            background-color: #fff8f5; /* Off-white container */
             border-radius: 15px;
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-            position: relative;
-            z-index: 1; /* Ensures content is above the watermark */
         }
         h1 {
             font-family: 'Playfair Display', serif;
             text-align: center;
-            color: #ff7800; /* Vibrant orange heading color */
+            color: #880e4f; /* Deep maroon */
             font-size: 3em;
             margin-bottom: 30px;
             text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
@@ -42,47 +36,47 @@
         .aarati {
             margin-bottom: 50px;
             padding: 20px;
-            background-color: #fff8f5; /* Lighter off-white section background */
+            background-color: #fdf5f2;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
         }
         .aarati h2, .prayer h3 {
             font-family: 'Playfair Display', serif;
             font-size: 2em;
-            color: #d84315; /* Saffron/orange heading color */
-            text-align: left;
+            color: #d84315; /* Saffron/orange */
+            text-align: left; /* Changed to left for header */
             margin-bottom: 15px;
             padding-bottom: 5px;
-            border-bottom: 2px solid #ffbb77; /* Lighter orange border */
+            border-bottom: 2px solid #ffcc80;
             line-height: 1.3;
         }
         .aarati p, .prayer p {
             font-size: 1.2em;
-            text-align: left;
+            text-align: left; /* Aligned text to the left */
             margin: 0;
             line-height: 1.8;
-            white-space: pre-wrap;
+            white-space: pre-wrap; /* Allows lines to wrap naturally */
         }
         .devanagari {
             font-size: 1.5em;
-            color: #5d4037; /* Darker brown for main text */
+            color: #5d4037; /* Darker brown */
             font-weight: 700;
         }
         .english {
             font-style: italic;
-            color: #9c6c44; /* Tan/gold color */
+            color: #b78a63; /* Tan/gold color */
             margin-top: 5px;
         }
         .separator {
             text-align: center;
-            color: #ffbb77;
+            color: #ffcc80;
             font-size: 2.5em;
             margin: 40px 0;
             font-weight: bold;
         }
         .prayer {
             padding: 20px;
-            background-color: #fff8f5;
+            background-color: #fdf5f2;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
         }
@@ -100,9 +94,6 @@
             }
             .devanagari {
                 font-size: 1.4em;
-            }
-            body {
-                background-size: 100px; /* Adjust watermark size for smaller screens */
             }
         }
     </style>
