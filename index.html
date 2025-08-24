@@ -55,22 +55,12 @@
             text-align: center;
             margin: 0;
             line-height: 1.8;
-            padding: 0 5px; /* Added padding to prevent text from touching screen edges */
+            white-space: pre-wrap; /* Allows lines to wrap naturally */
         }
-        /* New class to handle long Devanagari lines on small screens */
         .devanagari {
             font-size: 1.5em;
             color: #5d4037; /* Darker brown */
             font-weight: 700;
-            white-space: nowrap; /* Prevents line breaks */
-            overflow-x: auto; /* Adds a horizontal scrollbar */
-            text-align: center;
-            -ms-overflow-style: none;  /* Hides scrollbar in IE and Edge */
-            scrollbar-width: none;  /* Hides scrollbar in Firefox */
-        }
-        /* Hides scrollbar for WebKit (Chrome, Safari) */
-        .devanagari::-webkit-scrollbar {
-            display: none;
         }
         .english {
             font-style: italic;
@@ -89,6 +79,22 @@
             background-color: #fdf5f2;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        /* Media query for mobile devices */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2.5em;
+            }
+            .aarati h2, .prayer h3 {
+                font-size: 1.6em;
+            }
+            .aarati p, .prayer p {
+                font-size: 1.1em;
+            }
+            .devanagari {
+                font-size: 1.4em;
+            }
         }
     </style>
 </head>
