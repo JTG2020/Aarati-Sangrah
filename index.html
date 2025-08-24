@@ -6,640 +6,684 @@
     <title>Aarati Sangrah</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Mukta', sans-serif;
-            background-color: #f7f3e9;
-            color: #4b3f33;
+            background-color: #fce4b2; /* A soft, light orange */
+            color: #4b3f33; /* Dark brown text for contrast */
             line-height: 1.6;
             margin: 0;
-            padding: 20px;
-            max-width: 800px;
-            margin: 0 auto;
+            padding: 10px;
+            box-sizing: border-box;
+            position: relative;
         }
+
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Lord_Ganesha_silhouette.svg/1024px-Lord_Ganesha_silhouette.svg.png');
+            background-repeat: repeat;
+            background-size: 100px; /* Smaller watermark for mobile */
+            opacity: 0.15; /* Subtle watermark */
+            z-index: -1; /* Puts the watermark behind the content */
+        }
+        
         .container {
-            padding: 20px;
-            background-color: #ffffff;
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 15px;
+            background-color: #fffaf0; /* Off-white container for readability */
             border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 1; /* Ensures content is above the watermark */
         }
         h1 {
+            font-family: 'Playfair Display', serif;
             text-align: center;
-            color: #d84315;
+            color: #d84315; /* Saffron/orange heading color */
             font-size: 2.5em;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
         }
         .aarati {
-            margin-bottom: 40px;
-            padding-bottom: 20px;
-            border-bottom: 2px solid #e0e0e0;
+            margin-bottom: 30px;
+            padding: 15px;
+            background-color: #fff8f5; /* Lighter off-white section background */
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
         }
-        .aarati h2 {
-            font-size: 1.8em;
-            color: #00796b;
+        .aarati h2, .prayer h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6em;
+            color: #d84315; /* Saffron/orange heading color */
             text-align: center;
             margin-bottom: 10px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #ffcc80; /* Lighter orange border */
         }
-        .aarati p {
-            font-size: 1.2em;
-            text-align: center;
+        .aarati p, .prayer p {
+            font-size: 1.1em;
+            text-align: left;
             margin: 0;
-            white-space: pre-wrap;
             line-height: 1.8;
+            white-space: pre-wrap;
         }
-        .devanagari {
-            font-size: 1.5em;
-            color: #4b3f33;
+        .devanagari, .tamil-text {
+            font-size: 1.4em;
+            color: #5d4037; /* Darker brown for main text */
             font-weight: 700;
         }
         .english {
             font-style: italic;
-            color: #8d6e63;
+            color: #9c6c44; /* Tan/gold color */
+            margin-top: 5px;
+            text-align: left; /* Explicitly align English text left */
         }
         .separator {
             text-align: center;
-            color: #9e9e9e;
-            font-size: 1.5em;
+            color: #ffbb77;
+            font-size: 2em;
             margin: 30px 0;
+            font-weight: bold;
         }
-        /* Style for the 'Ghalin Lotangan' and other final prayers */
-        .prayer h3 {
+        .prayer {
+            padding: 15px;
+            background-color: #fff8f5;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        .toc {
+            margin-top: 20px;
+            margin-bottom: 30px;
+            padding: 15px;
+            background-color: #f1f1f1;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        .toc h2 {
+            font-family: 'Playfair Display', serif;
             font-size: 1.6em;
-            color: #00796b;
+            color: #d84315;
             text-align: center;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
+        }
+        .toc ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+        .toc li {
+            display: inline-block;
+            margin: 5px 10px;
+        }
+        .toc a {
+            text-decoration: none;
+            color: #4b3f33;
+            font-weight: bold;
+            font-size: 1.1em;
+            transition: color 0.3s;
+        }
+        .toc a:hover {
+            color: #d84315;
+            text-decoration: underline;
+        }
+        .go-to-top {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .go-to-top a {
+            color: #d84315;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #ffcc80;
+        }
+        .tab-button {
+            background-color: #fff8f5;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #4b3f33;
+            border-radius: 8px 8px 0 0;
+            transition: background-color 0.3s;
+        }
+        .tab-button.active {
+            background-color: #ffcc80;
+            color: #d84315;
+            border-bottom: 2px solid #d84315;
+        }
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        .tamil-text-container {
+            font-family: 'Mukta', sans-serif; /* Use Mukta font for Tamil too, as it supports Devanagari, English, and has good cross-script support */
+            padding-top: 20px;
         }
     </style>
 </head>
 <body>
-    <div class="container">
+    <div class="container" id="top">
         <h1>Aarati Sangrah</h1>
 
-        <div class="aarati">
-            <h2>॥ श्री गणपतीची आरती ॥</h2>
-            <p class="devanagari">
-                सुखकर्ता दुःखहर्ता वार्ता विघ्नाची।
-                नुरवी पुरवी प्रेम कृपा जयाची।
-                सर्वांगी सुन्दर उटि शेंदुराची।
-                कण्ठी झळके माळ मुक्ताफळांची॥
-            </p>
-            <p class="english">
-                Sukhakarta Dukhharta Varta Vighnachi.
-                Nuravi Puravi Prema Krupa Jayachi.
-                Sarvangi Sundar Uti Shendurachi.
-                Kanthi Jhalke Mala Muktaphalanchi॥
-            </p>
-            <p class="devanagari">
-                जय देव जय देव जय मंगलमूर्ति।
-                दर्शनमात्रे मनकामना पुरती॥
-            </p>
-            <p class="english">
-                Jaya Deva Jaya Deva Jaya Mangalamurti.
-                Darshan Matre Manakamana Purati॥
-            </p>
-            <p class="devanagari">
-                रत्नखचित फरा तुज गौरीकुमरा।
-                चन्दनाची उटि कुंकुमकेशरा।
-                हिरे जड़ित मुकुट शोभतो बरा।
-                रुणझुणती नूपुरे चरणी घागरिया॥
-            </p>
-            <p class="english">
-                Ratnakhachit Phara Tuj Gaurikumara.
-                Chandanachi Uti Kunkumakeshara.
-                Hire Jadit Mukut Shobhato Bara.
-                Runjhunati Nupure Charani Ghagariya॥
-            </p>
-            <p class="devanagari">
-                जय देव जय देव जय मंगलमूर्ति।
-                दर्शनमात्रे मनकामना पुरती॥
-            </p>
-            <p class="english">
-                Jaya Deva Jaya Deva Jaya Mangalamurti.
-                Darshan Matre Manakamana Purati॥
-            </p>
-            <p class="devanagari">
-                लम्बोदर पीताम्बर फणिवर बन्धना।
-                सरळ सोण्ड वक्रतुण्ड त्रिनयना।
-                दास रामाचा वाट पाहे सदना।
-                संकटी पावावे निर्वाणी रक्षावे सुरवरवन्दना॥
-            </p>
-            <p class="english">
-                Lambodara Pitambar Phanivara Bandhana.
-                Sarala Sond Vakratunda Trinayana.
-                Das Ramacha Vaat Pahe Sadana.
-                Sankati Pavave Nirvani Rakshave Suravaravandana॥
-            </p>
-            <p class="devanagari">
-                जय देव जय देव जय मंगलमूर्ति।
-                दर्शनमात्रे मनकामना पुरती॥
-            </p>
-            <p class="english">
-                Jaya Deva Jaya Deva Jaya Mangalamurti.
-                Darshan Matre Manakamana Purati॥
-            </p>
+        <div class="tabs">
+            <button class="tab-button active" onclick="openTab('marathi')">मराठी/हिंदी</button>
+            <button class="tab-button" onclick="openTab('tamil')">தமிழ்</button>
         </div>
 
-        <div class="separator">***</div>
+        <div id="marathi" class="tab-content active">
+            <div class="toc">
+                <h2>अनुक्रमणिका</h2>
+                <ul>
+                    <li><a href="#ganesh_marathi">गणपतीची आरती</a></li>
+                    <li><a href="#shankar">शंकराची आरती</a></li>
+                    <li><a href="#durga">दुर्गा देवीची आरती</a></li>
+                    <li><a href="#vitthoba">विठोबाची आरती</a></li>
+                    <li><a href="#dnyanray">ज्ञानरायाची आरती</a></li>
+                    <li><a href="#ganesh_hindi">गणेशजी की आरती</a></li>
+                    <li><a href="#ghalin_lotangan">घालीन लोटांगण</a></li>
+                    <li><a href="#karpur_gauram">कर्पूर गौरं</a></li>
+                    <li><a href="#mantra_pushpanjali">मंत्रपुष्पांजलि</a></li>
+                </ul>
+            </div>
 
-        <div class="aarati">
-            <h2>॥ श्री शंकराची आरती ॥</h2>
-            <p class="devanagari">
-                लवथवती विक्राळा ब्रह्माण्डी माळा।
-                वीषे कण्ठ काळा त्रिनेत्री ज्वाळा।
-                लावण्य सुन्दर मस्तकी बाळा।
-                तेथुनिया जळ निर्मळ वाहे झुळझुळा॥
-            </p>
-            <p class="english">
-                Lavthavati Vikrala Brahmandi Mala.
-                Vishe Kantha Kala Trinetri Jwala.
-                Lavni Sundar Mastaki Bala.
-                Tethuniya Jal Nirmal Vahe Zhullzhulla॥
-            </p>
-            <p class="devanagari">
-                जय देव जय देव जय श्रीशंकरा।
-                आरती ओवाळू तुज कर्पुरगौरा॥
-            </p>
-            <p class="english">
-                Jaya Deva Jaya Deva Jaya Shri Shankara.
-                Aarti Ovalu Tuz Karpurgaura॥
-            </p>
-            <p class="devanagari">
-                कर्पुर्गौरा भोळा नयनी विशाळा।
-                अर्धांगी पार्वती सुमनांच्या माळा।
-                विभुतीचे उधळण शितिकण्ठ नीळा।
-                ऐसा शंकर शोभे उमावेल्हाळा॥
-            </p>
-            <p class="english">
-                Karpurgaura Bhola Nayani Vishala.
-                Ardhangi Parvati Sumanancha Mala.
-                Vibhutiche Udhalan Shitikant Neela.
-                Aisa Shankar Shobhe Umavelhala॥
-            </p>
-            <p class="devanagari">
-                जय देव जय देव जय श्रीशंकरा।
-                आरती ओवाळू तुज कर्पुरगौरा॥
-            </p>
-            <p class="english">
-                Jaya Deva Jaya Deva Jaya Shri Shankara.
-                Aarti Ovalu Tuz Karpurgaura॥
-            </p>
-            <p class="devanagari">
-                देवी दैत्यी सागरमन्थन पै केलें।
-                त्यामाजी अवचित हळाहळ जें उठिले।
-                ते त्वां असुरपणे प्राशन केलें।
-                नीलकण्ठ नाम प्रसिद्ध झालें॥
-            </p>
-            <p class="english">
-                Devi Daityi Sagarmanthan Pai Kele.
-                Tyamaji Avachit Halahal Je Uthile.
-                Te Tva Asurpane Prashan Kele.
-                Neelkanth Naam Prasiddh Jhale॥
-            </p>
-            <p class="devanagari">
-                जय देव जय देव जय श्रीशंकरा।
-                आरती ओवाळू तुज कर्पुरगौरा॥
-            </p>
-            <p class="english">
-                Jaya Deva Jaya Deva Jaya Shri Shankara.
-                Aarti Ovalu Tuz Karpurgaura॥
-            </p>
-            <p class="devanagari">
-                व्याघ्राम्बर फणिवरधर सुन्दर मदनारी।
-                पंचानन मनमोहन मुनिजन सुखकारी।
-                शतकोटीचें बीज वाचे उच्चारी।
-                रघुकुळटिळक रामदासा अन्तरी॥
-            </p>
-            <p class="english">
-                Vyaghrambar Phanivardhar Sundar Madanari.
-                Panchanan Manmohan Munijan Sukhkari.
-                Shatakotichen Beej Vache Ucchari.
-                Raghukul Tilak Ramdasa Antari॥
-            </p>
-            <p class="devanagari">
-                जय देव जय देव जय श्रीशंकरा।
-                आरती ओवाळू तुज कर्पुरगौरा॥
-            </p>
-            <p class="english">
-                Jaya Deva Jaya Deva Jaya Shri Shankara.
-                Aarti Ovalu Tuz Karpurgaura॥
-            </p>
-        </div>
+            <div class="aarati">
+                <h2 id="ganesh_marathi">॥ श्री गणपतीची आरती ॥</h2>
+                <p class="devanagari">
+                    सुखकर्ता दुःखहर्ता वार्ता विघ्नाची।
+                    नुरवी पुरवी प्रेम कृपा जयाची।
+                    सर्वांगी सुन्दर उटि शेंदुराची।
+                    कण्ठी झळके माळ मुक्ताफळांची॥
+                </p>
+                <p class="english">
+                    Sukhakarta Dukhharta Varta Vighnachi.
+                    Nuravi Puravi Prema Krupa Jayachi.
+                    Sarvangi Sundar Uti Shendurachi.
+                    Kanthi Jhalke Mala Muktaphalanchi॥
+                </p>
+                <p class="devanagari">
+                    जय देव जय देव जय मंगलमूर्ति।
+                    दर्शनमात्रे मनकामना पुरती॥
+                </p>
+                <p class="english">
+                    Jaya Deva Jaya Deva Jaya Mangalamurti.
+                    Darshan Matre Manakamana Purati॥
+                </p>
+                <p class="devanagari">
+                    रत्नखचित फरा तुज गौरीकुमरा।
+                    चन्दनाची उटि कुंकुमकेशरा।
+                    हिरे जड़ित मुकुट शोभतो बरा।
+                    रुणझुणती नूपुरे चरणी घागरिया॥
+                </p>
+                <p class="english">
+                    Ratnakhachit Phara Tuj Gaurikumara.
+                    Chandanachi Uti Kunkumakeshara.
+                    Hire Jadit Mukut Shobhato Bara.
+                    Runjhunati Nupure Charani Ghagariya॥
+                </p>
+                <p class="devanagari">
+                    जय देव जय देव जय मंगलमूर्ति।
+                    दर्शनमात्रे मनकामना पुरती॥
+                </p>
+                <p class="english">
+                    Jaya Deva Jaya Deva Jaya Mangalamurti.
+                    Darshan Matre Manakamana Purati॥
+                </p>
+                <p class="devanagari">
+                    लम्बोदर पीताम्बर फणिवर बन्धना।
+                    सरळ सोण्ड वक्रतुण्ड त्रिनयना।
+                    दास रामाचा वाट पाहे सदना।
+                    संकटी पावावे निर्वाणी रक्षावे सुरवरवन्दना॥
+                </p>
+                <p class="english">
+                    Lambodara Pitambar Phanivara Bandhana.
+                    Sarala Sond Vakratunda Trinayana.
+                    Das Ramacha Vaat Pahe Sadana.
+                    Sankati Pavave Nirvani Rakshave Suravaravandana॥
+                </p>
+                <p class="devanagari">
+                    जय देव जय देव जय मंगलमूर्ति।
+                    दर्शनमात्रे मनकामना पुरती॥
+                </p>
+                <p class="english">
+                    Jaya Deva Jaya Deva Jaya Mangalamurti.
+                    Darshan Matre Manakamana Purati॥
+                </p>
+            </div>
 
-        <div class="separator">***</div>
+            <div class="separator">ॐ</div>
 
-        <div class="aarati">
-            <h2>॥ श्री दुर्गा देवीची आरती ॥</h2>
-            <p class="devanagari">
-                दुर्गे दुर्घट भारी तुजविण संसारी।
-                अनाथ नाथे अम्बे करुणा विस्तारी।
-                वारी वारी जन्म मरणांते वारी।
-                हारी पडलो आता संकट निवारी॥
-            </p>
-            <p class="english">
-                Durge Durghat Bhari Tuzvin Sansari.
-                Anath Nathe Ambe Karuna Vistari.
-                Vari Vari Janma Marnante Vari.
-                Hari Padlo Ata Sankat Nivari॥
-            </p>
-            <p class="devanagari">
-                जय देवी जय देवी महिषासुरमथिनी।
-                सुरवर ईश्वर वरदे तारक संजीवनी॥
-            </p>
-            <p class="english">
-                Jaya Devi Jaya Devi Mahishasuramathini.
-                Survar Ishwar Varde Tarak Sanjivani॥
-            </p>
-            <p class="devanagari">
-                त्रिभुवन-भुवनी पाहता तुज ऐसी नाही।
-                चारी श्रमले परन्तु न बोलवे काही।
-                साही विवाद करिता पडले प्रवाही।
-                ते तू भक्तालागी पावसि लवलाही॥
-            </p>
-            <p class="english">
-                Tribhuvan-Bhuvani Pahta Tuz Aesi Nahi.
-                Chari Shramle Parantu Na Bolve Kahi.
-                Sahi Vivad Karita Padle Pravahi.
-                Te Tu Bhaktalagi Pavasi Lavlahi॥
-            </p>
-            <p class="devanagari">
-                जय देवी जय देवी महिषासुरमथिनी।
-                सुरवर ईश्वर वरदे तारक संजीवनी॥
-            </p>
-            <p class="english">
-                Jaya Devi Jaya Devi Mahishasuramathini.
-                Survar Ishwar Varde Tarak Sanjivani॥
-            </p>
-            <p class="devanagari">
-                प्रसन्न वदने प्रसन्न होसी निजदासा।
-                क्लेशांपासुनि सोडवि तोडी भवपाशा।
-                अम्बे तुजवाचून कोण पुरविल आशा।
-                नरहरी तल्लिन झाला पदपंकजलेशा॥
-            </p>
-            <p class="english">
-                Prasann Vadane Prasann Hosi Nijdasa.
-                Kleshampasuni Sodavi Todi Bhavpasha.
-                Ambe Tuzvachun Kon Puravil Asha.
-                Narhari Tallin Zhala Padpankajlesha॥
-            </p>
-            <p class="devanagari">
-                जय देवी जय देवी महिषासुरमथिनी।
-                सुरवर ईश्वर वरदे तारक संजीवनी॥
-            </p>
-            <p class="english">
-                Jaya Devi Jaya Devi Mahishasuramathini.
-                Survar Ishwar Varde Tarak Sanjivani॥
-            </p>
-        </div>
+            <div class="aarati">
+                <h2 id="shankar">॥ श्री शंकराची आरती ॥</h2>
+                <p class="devanagari">
+                    लवथवती विक्राळा ब्रह्माण्डी माळा।
+                    वीषे कण्ठ काळा त्रिनेत्री ज्वाळा।
+                    लावण्य सुन्दर मस्तकी बाळा।
+                    तेथुनिया जळ निर्मळ वाहे झुळझुळा॥
+                </p>
+                <p class="english">
+                    Lavthavati Vikrala Brahmandi Mala.
+                    Vishe Kantha Kala Trinetri Jwala.
+                    Lavni Sundar Mastaki Bala.
+                    Tethuniya Jal Nirmal Vahe Zhullzhulla॥
+                </p>
+                <p class="devanagari">
+                    जय देव जय देव जय श्रीशंकरा।
+                    आरती ओवाळू तुज कर्पुरगौरा॥
+                </p>
+                <p class="english">
+                    Jaya Deva Jaya Deva Jaya Shri Shankara.
+                    Aarti Ovalu Tuz Karpurgaura॥
+                </p>
+                <p class="devanagari">
+                    कर्पुर्गौरा भोळा नयनी विशाळा।
+                    अर्धांगी पार्वती सुमनांच्या माळा।
+                    विभुतीचे उधळण शितिकण्ठ नीळा।
+                    ऐसा शंकर शोभे उमावेल्हाळा॥
+                </p>
+                <p class="english">
+                    Karpurgaura Bhola Nayani Vishala.
+                    Ardhangi Parvati Sumanancha Mala.
+                    Vibhutiche Udhalan Shitikant Neela.
+                    Aisa Shankar Shobhe Umavelhala॥
+                </p>
+                <p class="devanagari">
+                    जय देव जय देव जय श्रीशंकरा।
+                    आरती ओवाळू तुज कर्पुरगौरा॥
+                </p>
+                <p class="english">
+                    Jaya Deva Jaya Deva Jaya Shri Shankara.
+                    Aarti Ovalu Tuz Karpurgaura॥
+                </p>
+                <p class="devanagari">
+                    देवी दैत्यी सागरमन्थन पै केलें।
+                    त्यामाजी अवचित हळाहळ जें उठिले।
+                    ते त्वां असुरपणे प्राशन केलें।
+                    नीलकण्ठ नाम प्रसिद्ध झालें॥
+                </p>
+                <p class="english">
+                    Devi Daityi Sagarmanthan Pai Kele.
+                    Tyamaji Avachit Halahal Je Uthile.
+                    Te Tva Asurpane Prashan Kele.
+                    Neelkanth Naam Prasiddh Jhale॥
+                </p>
+                <p class="devanagari">
+                    जय देव जय देव जय श्रीशंकरा।
+                    आरती ओवाळू तुज कर्पुरगौरा॥
+                </p>
+                <p class="english">
+                    Jaya Deva Jaya Deva Jaya Shri Shankara.
+                    Aarti Ovalu Tuz Karpurgaura॥
+                </p>
+                <p class="devanagari">
+                    व्याघ्राम्बर फणिवरधर सुन्दर मदनारी।
+                    पंचानन मनमोहन मुनिजन सुखकारी।
+                    शतकोटीचें बीज वाचे उच्चारी।
+                    रघुकुळटिळक रामदासा अन्तरी॥
+                </p>
+                <p class="english">
+                    Vyaghrambar Phanivardhar Sundar Madanari.
+                    Panchanan Manmohan Munijan Sukhkari.
+                    Shatakotichen Beej Vache Ucchari.
+                    Raghukul Tilak Ramdasa Antari॥
+                </p>
+                <p class="devanagari">
+                    जय देव जय देव जय श्रीशंकरा।
+                    आरती ओवाळू तुज कर्पुरगौरा॥
+                </p>
+                <p class="english">
+                    Jaya Deva Jaya Deva Jaya Shri Shankara.
+                    Aarti Ovalu Tuz Karpurgaura॥
+                </p>
+            </div>
 
-        <div class="separator">***</div>
+            <div class="separator">ॐ</div>
 
-        <div class="aarati">
-            <h2>॥ श्री विठोबाची आरती ॥</h2>
-            <p class="devanagari">
-                युगें अठ्ठावीस विटेवरी उभा।
-                वामांगी रखुमाई दिसे दिव्य शोभा।
-                पुण्डलिकाचे भेटी परब्रह्म आलें गा।
-                चरणी वाहे भीमा उद्धरी जगा॥
-            </p>
-            <p class="english">
-                Yuge Atthavis Vitevari Ubha.
-                Vamangi Rakhumai Dise Divya Shobha.
-                Pundalikache Bheti Parabrahma Alen Ga.
-                Charani Vahe Bhima Udhari Jaga॥
-            </p>
-            <p class="devanagari">
-                जय देव जय देव जय पाण्डुरंगा।
-                रखुमाईवल्लभा राईच्या वल्लभा पावें जिवलगा॥
-            </p>
-            <p class="english">
-                Jaya Deva Jaya Deva Jaya Panduranga.
-                Rakhumaivallabha Raichya Vallabha Pavem Jivalaga॥
-            </p>
-            <p class="devanagari">
-                तुळसीमाळा गळां कर ठेवुनि कटीं।
-                कांसे पीताम्बर कस्तुरि लल्लाटी।
-                देव सुरवर नित्य येती भेटी।
-                गरुड हनुमन्त पुढे उभे राहती॥
-            </p>
-            <p class="english">
-                Tulsi Mala Gala Kar Thevuni Katin.
-                Kanse Pitambar Kasturi Lallati.
-                Dev Survar Nitya Yeti Bheti.
-                Garud Hanumant Pudhe Ubhe Rahati॥
-            </p>
-            <p class="devanagari">
-                जय देव जय देव जय पाण्डुरंगा।
-                रखुमाईवल्लभा राईच्या वल्लभा पावें जिवलगा॥
-            </p>
-            <p class="english">
-                Jaya Deva Jaya Deva Jaya Panduranga.
-                Rakhumaivallabha Raichya Vallabha Pavem Jivalaga॥
-            </p>
-            <p class="devanagari">
-                धन्य वेणुनाद अनुक्षेत्रपाळा।
-                सुवर्णाची कमळे वनमाळा गळां।
-                राही रखुमाबाई राणीया सकळा।
-                ओवाळिती राजा विठोबा सांवळा॥
-            </p>
-            <p class="english">
-                Dhanya Venunad Anukshetrapala.
-                Suvarnachi Kamale Vanmala Gala.
-                Rahi Rakhumabai Raniya Sakala.
-                Ovaliti Raja Vithoba Sanwala॥
-            </p>
-            <p class="devanagari">
-                जय देव जय देव जय पाण्डुरंगा।
-                रखुमाईवल्लभा राईच्या वल्लभा पावें जिवलगा॥
-            </p>
-            <p class="english">
-                Jaya Deva Jaya Deva Jaya Panduranga.
-                Rakhumaivallabha Raichya Vallabha Pavem Jivalaga॥
-            </p>
-            <p class="devanagari">
-                ओवाळूं आरत्या कुर्वण्ड्या येती।
-                चन्द्रभागेमाजी सोडुनियां देती।
-                दिंड्या पताका वैष्णव नाचती।
-                पंढरीचा महिमा वर्णावा किती॥
-            </p>
-            <p class="english">
-                Ovalun Aartya Kurvandiya Yeti.
-                Chandrabhaagemaaji Soduniya Deti.
-                Dindya Pataka Vaishnav Nachati.
-                Pandharicha Mahima Varnava Kiti॥
-            </p>
-            <p class="devanagari">
-                जय देव जय देव जय पाण्डुरंगा।
-                रखुमाईवल्लभा राईच्या वल्लभा पावें जिवलगा॥
-            </p>
-            <p class="english">
-                Jaya Deva Jaya Deva Jaya Panduranga.
-                Rakhumaivallabha Raichya Vallabha Pavem Jivalaga॥
-            </p>
-            <p class="devanagari">
-                आषाढी कार्तिकी भक्तजन येती।
-                चन्द्रभागेमाजी स्नाने जे करिती।
-                दर्शनहेळामात्रें तयां होय मुक्ती।
-                केशवासी नामदेव भावे ओंवाळिती॥
-            </p>
-            <p class="english">
-                Aashadhi Kartiki Bhaktajan Yeti.
-                Chandrabhaagemaaji Snane Je Kariti.
-                Darshanhelamatre Tyan Hoy Mukti.
-                Keshavasi Namdev Bhave Ovaliti॥
-            </p>
-            <p class="devanagari">
-                जय देव जय देव जय पाण्डुरंगा।
-                रखुमाईवल्लभा राईच्या वल्लभा पावें जिवलगा॥
-            </p>
-            <p class="english">
-                Jaya Deva Jaya Deva Jaya Panduranga.
-                Rakhumaivallabha Raichya Vallabha Pavem Jivalaga॥
-            </p>
-        </div>
+            <div class="aarati">
+                <h2 id="durga">॥ श्री दुर्गा देवीची आरती ॥</h2>
+                <p class="devanagari">
+                    दुर्गे दुर्घट भारी तुजविण संसारी।
+                    अनाथ नाथे अम्बे करुणा विस्तारी।
+                    वारी वारी जन्म मरणांते वारी।
+                    हारी पडलो आता संकट निवारी॥
+                </p>
+                <p class="english">
+                    Durge Durghat Bhari Tuzvin Sansari.
+                    Anath Nathe Ambe Karuna Vistari.
+                    Vari Vari Janma Marnante Vari.
+                    Hari Padlo Ata Sankat Nivari॥
+                </p>
+                <p class="devanagari">
+                    जय देवी जय देवी महिषासुरमथिनी।
+                    सुरवर ईश्वर वरदे तारक संजीवनी॥
+                </p>
+                <p class="english">
+                    Jaya Devi Jaya Devi Mahishasuramathini.
+                    Survar Ishwar Varde Tarak Sanjivani॥
+                </p>
+                <p class="devanagari">
+                    त्रिभुवन-भुवनी पाहता तुज ऐसी नाही।
+                    चारी श्रमले परन्तु न बोलवे काही।
+                    साही विवाद करिता पडले प्रवाही।
+                    ते तू भक्तालागी पावसि लवलाही॥
+                </p>
+                <p class="english">
+                    Tribhuvan-Bhuvani Pahta Tuz Aesi Nahi.
+                    Chari Shramle Parantu Na Bolve Kahi.
+                    Sahi Vivad Karita Padle Pravahi.
+                    Te Tu Bhaktalagi Pavasi Lavlahi॥
+                </p>
+                <p class="devanagari">
+                    जय देवी जय देवी महिषासुरमथिनी।
+                    सुरवर ईश्वर वरदे तारक संजीवनी॥
+                </p>
+                <p class="english">
+                    Jaya Devi Jaya Devi Mahishasuramathini.
+                    Survar Ishwar Varde Tarak Sanjivani॥
+                </p>
+                <p class="devanagari">
+                    प्रसन्न वदने प्रसन्न होसी निजदासा।
+                    क्लेशांपासुनि सोडवि तोडी भवपाशा।
+                    अम्बे तुजवाचून कोण पुरविल आशा।
+                    नरहरी तल्लिन झाला पदपंकजलेशा॥
+                </p>
+                <p class="english">
+                    Prasann Vadane Prasann Hosi Nijdasa.
+                    Kleshampasuni Sodavi Todi Bhavpasha.
+                    Ambe Tuzvachun Kon Puravil Asha.
+                    Narhari Tallin Zhala Padpankajlesha॥
+                </p>
+                <p class="devanagari">
+                    जय देवी जय देवी महिषासुरमथिनी।
+                    सुरवर ईश्वर वरदे तारक संजीवनी॥
+                </p>
+                <p class="english">
+                    Jaya Devi Jaya Devi Mahishasuramathini.
+                    Survar Ishwar Varde Tarak Sanjivani॥
+                </p>
+            </div>
 
-        <div class="separator">***</div>
+            <div class="separator">ॐ</div>
 
-        <div class="aarati">
-            <h2>॥ आरती ज्ञानरायाची ॥</h2>
-            <p class="devanagari">
-                आरती ज्ञानराजा ।। महाकैवल्यतेजा ।
-                सेविती साधुसंत । मनु वेधला माझा ॥।ध्रु० ॥।
-            </p>
-            <p class="english">
-                Aarti Jnanaraja ॥ Mahakaivalyateja ॥
-                Seviti Sadhusant । Manu Vedhala Majha ॥। Dhru ॥।
-            </p>
-            <p class="devanagari">
-                लोपलें ज्ञान जगीं। हित नेणती कोणी।
-                अवतार पांडुरंग । नाम ठेविलें ज्ञानी ॥।१॥
-            </p>
-            <p class="english">
-                Lopale Gyan Jagin । Hit Nenti Koni ।
-                Avatar Pandurang । Naam Thevile Gnyani ॥।1॥
-            </p>
-            <p class="devanagari">
-                कनकाचे ताट करीं ।उभ्या गोपिका नारी ।
-                नारद तुंबरहो ।सामगायन करी ।२॥
-            </p>
-            <p class="english">
-                Kanakache Tat Karin । Ubhya Gopika Nari ।
-                Narad Tumbarho । Samgayan Kari ॥2॥
-            </p>
-            <p class="devanagari">
-                प्रगटगुह्य बोले । विश्व ब्रह्मचि केले ।
-                रामजनार्दनी । पायी मस्तक ठेविलें ॥।३॥
-            </p>
-            <p class="english">
-                Pragatguhya Bole । Vishva Brahmachi Kele ।
-                Ramjanardani । Payi Mastak Thevile ॥।3॥
-            </p>
-        </div>
+            <div class="aarati">
+                <h2 id="vitthoba">॥ श्री विठोबाची आरती ॥</h2>
+                <p class="devanagari">
+                    युगें अठ्ठावीस विटेवरी उभा।
+                    वामांगी रखुमाई दिसे दिव्य शोभा।
+                    पुण्डलिकाचे भेटी परब्रह्म आलें गा।
+                    चरणी वाहे भीमा उद्धरी जगा॥
+                </p>
+                <p class="english">
+                    Yuge Atthavis Vitevari Ubha.
+                    Vamangi Rakhumai Dise Divya Shobha.
+                    Pundalikache Bheti Parabrahma Alen Ga.
+                    Charani Vahe Bhima Udhari Jaga॥
+                </p>
+                <p class="devanagari">
+                    जय देव जय देव जय पाण्डुरंगा।
+                    रखुमाईवल्लभा राईच्या वल्लभा पावें जिवलगा॥
+                </p>
+                <p class="english">
+                    Jaya Deva Jaya Deva Jaya Panduranga.
+                    Rakhumaivallabha Raichya Vallabha Pavem Jivalaga॥
+                </p>
+                <p class="devanagari">
+                    तुळसीमाळा गळां कर ठेवुनि कटीं।
+                    कांसे पीताम्बर कस्तुरि लल्लाटी।
+                    देव सुरवर नित्य येती भेटी।
+                    गरुड हनुमन्त पुढे उभे राहती॥
+                </p>
+                <p class="english">
+                    Tulsi Mala Gala Kar Thevuni Katin.
+                    Kanse Pitambar Kasturi Lallati.
+                    Dev Survar Nitya Yeti Bheti.
+                    Garud Hanumant Pudhe Ubhe Rahati॥
+                </p>
+                <p class="devanagari">
+                    जय देव जय देव जय पाण्डुरंगा।
+                    रखुमाईवल्लभा राईच्या वल्लभा पावें जिवलगा॥
+                </p>
+                <p class="english">
+                    Jaya Deva Jaya Deva Jaya Panduranga.
+                    Rakhumaivallabha Raichya Vallabha Pavem Jivalaga॥
+                </p>
+                <p class="devanagari">
+                    धन्य वेणुनाद अनुक्षेत्रपाळा।
+                    सुवर्णाची कमळे वनमाळा गळां।
+                    राही रखुमाबाई राणीया सकळा।
+                    ओवाळिती राजा विठोबा सांवळा॥
+                </p>
+                <p class="english">
+                    Dhanya Venunad Anukshetrapala.
+                    Suvarnachi Kamale Vanmala Gala.
+                    Rahi Rakhumabai Raniya Sakala.
+                    Ovaliti Raja Vithoba Sanwala॥
+                </p>
+                <p class="devanagari">
+                    जय देव जय देव जय पाण्डुरंगा।
+                    रखुमाईवल्लभा राईच्या वल्लभा पावें जिवलगा॥
+                </p>
+                <p class="english">
+                    Jaya Deva Jaya Deva Jaya Panduranga.
+                    Rakhumaivallabha Raichya Vallabha Pavem Jivalaga॥
+                </p>
+                <p class="devanagari">
+                    ओवाळूं आरत्या कुर्वण्ड्या येती।
+                    चन्द्रभागेमाजी सोडुनियां देती।
+                    दिंड्या पताका वैष्णव नाचती।
+                    पंढरीचा महिमा वर्णावा किती॥
+                </p>
+                <p class="english">
+                    Ovalun Aartya Kurvandiya Yeti.
+                    Chandrabhaagemaaji Soduniya Deti.
+                    Dindya Pataka Vaishnav Nachati.
+                    Pandharicha Mahima Varnava Kiti॥
+                </p>
+                <p class="devanagari">
+                    जय देव जय देव जय पाण्डुरंगा।
+                    रखुमाईवल्लभा राईच्या वल्लभा पावें जिवलगा॥
+                </p>
+                <p class="english">
+                    Jaya Deva Jaya Deva Jaya Panduranga.
+                    Rakhumaivallabha Raichya Vallabha Pavem Jivalaga॥
+                </p>
+                <p class="devanagari">
+                    आषाढी कार्तिकी भक्तजन येती।
+                    चन्द्रभागेमाजी स्नाने जे करिती।
+                    दर्शनहेळामात्रें तयां होय मुक्ती।
+                    केशवासी नामदेव भावे ओंवाळिती॥
+                </p>
+                <p class="english">
+                    Aashadhi Kartiki Bhaktajan Yeti.
+                    Chandrabhaagemaaji Snane Je Kariti.
+                    Darshanhelamatre Tyan Hoy Mukti.
+                    Keshavasi Namdev Bhave Ovaliti॥
+                </p>
+                <p class="devanagari">
+                    जय देव जय देव जय पाण्डुरंगा।
+                    रखुमाईवल्लभा राईच्या वल्लभा पावें जिवलगा॥
+                </p>
+                <p class="english">
+                    Jaya Deva Jaya Deva Jaya Panduranga.
+                    Rakhumaivallabha Raichya Vallabha Pavem Jivalaga॥
+                </p>
+            </div>
 
-        <div class="separator">***</div>
+            <div class="separator">ॐ</div>
 
-        <div class="aarati">
-            <h2>॥ श्री गणेशजी की आरती ॥</h2>
-            <p class="devanagari">
-                जय गणेश, जय गणेश, जय गणेश देवा।
-                माता जाकी पार्वती, पिता महादेवा॥ x2
-            </p>
-            <p class="english">
-                Jaya Ganesh, Jaya Ganesh, Jaya Ganesh Deva.
-                Mata Jaki Parvati, Pita Mahadeva॥ x2
-            </p>
-            <p class="devanagari">
-                एकदन्त दयावन्त, चार भुजाधारी।
-                माथे पर तिलक सोहे, मूसे की सवारी॥ x2
-                (माथे पर सिन्दूर सोहे, मूसे की सवारी॥)
-            </p>
-            <p class="english">
-                Ekdant Dayavant, Char Bhujadhari.
-                Mathe Par Tilak Sohe, Moose Ki Sawari॥ x2
-                (Mathe Par Sindoor Sohe, Moose Ki Sawari॥)
-            </p>
-            <p class="devanagari">
-                पान चढ़े फूल चढ़े, और चढ़े मेवा।
-                (हार चढ़े, फूल चढ़े, और चढ़े मेवा।)
-                लड्डुअन का भोग लगे, सन्त करें सेवा॥ x2
-            </p>
-            <p class="english">
-                Paan Chadhe Phool Chadhe, Aur Chadhe Mewa.
-                (Haar Chadhe, Phool Chadhe, Aur Chadhe Mewa.)
-                Ladduan Ka Bhog Lage, Sant Karen Seva॥ x2
-            </p>
-            <p class="devanagari">
-                जय गणेश, जय गणेश, जय गणेश देवा।
-                माता जाकी पार्वती, पिता महादेवा॥ x2
-            </p>
-            <p class="english">
-                Jaya Ganesh, Jaya Ganesh, Jaya Ganesh Deva.
-                Mata Jaki Parvati, Pita Mahadeva॥ x2
-            </p>
-            <p class="devanagari">
-                अँधे को आँख देत, कोढ़िन को काया।
-                बाँझन को पुत्र देत, निर्धन को माया॥ x2
-            </p>
-            <p class="english">
-                Andhe Ko Aankh Det, Kodhin Ko Kaya.
-                Banjhan Ko Putra Det, Nirdhan Ko Maya॥ x2
-            </p>
-            <p class="devanagari">
-                'सूर' श्याम शरण आए, सफल कीजे सेवा।
-                माता जाकी पार्वती, पिता महादेवा॥ x2
-                (दीनन की लाज राखो, शम्भु सुतवारी।
-                कामना को पूर्ण करो, जग बलिहारी॥ x2)
-            </p>
-            <p class="english">
-                ‘Sur’ Shyam Sharan Aaye, Safal Kije Seva.
-                Mata Jaki Parvati, Pita Mahadeva॥ x2
-                (Deenan Ki Laaj Rakho, Shambhu Sutwari।
-                Kamana Ko Purn Karo, Jag Balihari॥ x2)
-            </p>
-            <p class="devanagari">
-                जय गणेश, जय गणेश, जय गणेश देवा।
-                माता जाकी पार्वती, पिता महादेवा॥ x2
-            </p>
-            <p class="english">
-                Jaya Ganesh, Jaya Ganesh, Jaya Ganesh Deva.
-                Mata Jaki Parvati, Pita Mahadeva॥ x2
-            </p>
-        </div>
+            <div class="aarati">
+                <h2 id="dnyanray">॥ आरती ज्ञानरायाची ॥</h2>
+                <p class="devanagari">
+                    आरती ज्ञानराजा ।। महाकैवल्यतेजा ।
+                    सेविती साधुसंत । मनु वेधला माझा ॥।ध्रु० ॥।
+                </p>
+                <p class="english">
+                    Aarti Jnanaraja ॥ Mahakaivalyateja ॥
+                    Seviti Sadhusant । Manu Vedhala Majha ॥। Dhru ॥।
+                </p>
+                <p class="devanagari">
+                    लोपलें ज्ञान जगीं। हित नेणती कोणी।
+                    अवतार पांडुरंग । नाम ठेविलें ज्ञानी ॥।१॥
+                </p>
+                <p class="english">
+                    Lopale Gyan Jagin । Hit Nenti Koni ।
+                    Avatar Pandurang । Naam Thevile Gnyani ॥।1॥
+                </p>
+                <p class="devanagari">
+                    कनकाचे ताट करीं ।उभ्या गोपिका नारी ।
+                    नारद तुंबरहो ।सामगायन करी ।२॥
+                </p>
+                <p class="english">
+                    Kanakache Tat Karin । Ubhya Gopika Nari ।
+                    Narad Tumbarho । Samgayan Kari ॥2॥
+                </p>
+                <p class="devanagari">
+                    प्रगटगुह्य बोले । विश्व ब्रह्मचि केले ।
+                    रामजनार्दनी । पायी मस्तक ठेविलें ॥।३॥
+                </p>
+                <p class="english">
+                    Pragatguhya Bole । Vishva Brahmachi Kele ।
+                    Ramjanardani । Payi Mastak Thevile ॥।3॥
+                </p>
+            </div>
 
-        <div class="separator">***</div>
+            <div class="separator">ॐ</div>
 
-        <div class="prayer">
-            <h3>घालीन लोटांगण</h3>
-            <p class="devanagari">
-                घालीन लोटांगण वंदीन चरण ।
-                डोळ्यांनी पाहिन रूप तुझे ।
-                प्रेमें आलिंगीन आनंद पूजन ।
-                भावे ओवाळिन म्हणे नामा ।।
-            </p>
-            <p class="english">
-                Ghalin Lotangan Vandeen Charan ।
-                Dolyanni Pahin Roop Tujhe ।
-                Premen Alingin Anand Poojan ।
-                Bhave Ovalin Mhane Nama ।।
-            </p>
-            <p class="devanagari">
-                त्वमेव माता पिता त्वमेव ।
-                त्वमेव बन्धु: सखा त्वमेव ।
-                त्वमेव विद्या द्रविणं त्वमेव ।
-                त्वमेव सर्वं मम देवदेव ।।
-            </p>
-            <p class="english">
-                Tvameva Mata Pita Tvameva ।
-                Tvameva Bandhu: Sakha Tvameva ।
-                Tvameva Vidya Dravinam Tvameva ।
-                Tvameva Sarvam Mama Devadev ।।
-            </p>
-            <p class="devanagari">
-                कायेन वाचा मनसेंद्रियैर्वा ।
-                बुध्यात्मना वा प्रकृति स्वभावात् ।
-                करमि यद्यत् सकलं परस्मै ।
-                नारायणायेती समर्पयामि ।।
-            </p>
-            <p class="english">
-                Kayena Vacha Manasendriyarva ।
-                Budhyatmana Va Prakriti Swabhavat ।
-                Karami Yadyat Saklam Parsmai ।
-                Narayanaayeti Samarpayami ।।
-            </p>
-            <p class="devanagari">
-                अच्युतं केशवं राम नारायणम्
-                कृष्णदामोदरं वासुदेवं भजे।
-                श्रीधरं माधवं गोपिकावल्लभम्
-                जानकीनायकं रामचंद्र भजे ।।
-            </p>
-            <p class="english">
-                Achyutam Keshavam Ram Narayanam
-                Krishna Damodaram Vasudevam Bhaje।
-                Shridharam Madhavam Gopikavallabham
-                Janakinaayakam Ramchandra Bhaje ।।
-            </p>
-            <p class="devanagari">
-                हरे राम हरे राम राम राम हरे हरे हरे कृष्ण हरे कृष्ण कृष्ण कृष्ण हरे हरे ।।
-            </p>
-            <p class="english">
-                Hare Ram Hare Ram Ram Ram Hare Hare Hare Krishna Hare Krishna Krishna Krishna Hare Hare ।।
-            </p>
-            <p class="devanagari">
-                ।। मंगलमुर्ती मोरया ।।
-            </p>
-            <p class="english">
-                ॥ Mangalmurti Morya ॥
-            </p>
-            <p class="devanagari">
-                ।। गणपतिबाप्पा मोरया ।।
-            </p>
-            <p class="english">
-                ॥ Ganpatibappa Morya ॥
-            </p>
-        </div>
+            <div class="aarati">
+                <h2 id="ganesh_hindi">॥ श्री गणेशजी की आरती ॥</h2>
+                <p class="devanagari">
+                    जय गणेश, जय गणेश, जय गणेश देवा।
+                    माता जाकी पार्वती, पिता महादेवा॥ x2
+                </p>
+                <p class="english">
+                    Jaya Ganesh, Jaya Ganesh, Jaya Ganesh Deva.
+                    Mata Jaki Parvati, Pita Mahadeva॥ x2
+                </p>
+                <p class="devanagari">
+                    एकदन्त दयावन्त, चार भुजाधारी।
+                    माथे पर तिलक सोहे, मूसे की सवारी॥ x2
+                    (माथे पर सिन्दूर सोहे, मूसे की सवारी॥)
+                </p>
+                <p class="english">
+                    Ekdant Dayavant, Char Bhujadhari.
+                    Mathe Par Tilak Sohe, Moose Ki Sawari॥ x2
+                    (Mathe Par Sindoor Sohe, Moose Ki Sawari॥)
+                </p>
+                <p class="devanagari">
+                    पान चढ़े फूल चढ़े, और चढ़े मेवा।
+                    (हार चढ़े, फूल चढ़े, और चढ़े मेवा।)
+                    लड्डुअन का भोग लगे, सन्त करें सेवा॥ x2
+                </p>
+                <p class="english">
+                    Paan Chadhe Phool Chadhe, Aur Chadhe Mewa.
+                    (Haar Chadhe, Phool Chadhe, Aur Chadhe Mewa.)
+                    Ladduan Ka Bhog Lage, Sant Karen Seva॥ x2
+                </p>
+                <p class="devanagari">
+                    जय गणेश, जय गणेश, जय गणेश देवा।
+                    माता जाकी पार्वती, पिता महादेवा॥ x2
+                </p>
+                <p class="english">
+                    Jaya Ganesh, Jaya Ganesh, Jaya Ganesh Deva.
+                    Mata Jaki Parvati, Pita Mahadeva॥ x2
+                </p>
+                <p class="devanagari">
+                    अँधे को आँख देत, कोढ़िन को काया।
+                    बाँझन को पुत्र देत, निर्धन को माया॥ x2
+                </p>
+                <p class="english">
+                    Andhe Ko Aankh Det, Kodhin Ko Kaya.
+                    Banjhan Ko Putra Det, Nirdhan Ko Maya॥ x2
+                </p>
+                <p class="devanagari">
+                    'सूर' श्याम शरण आए, सफल कीजे सेवा।
+                    माता जाकी पार्वती, पिता महादेवा॥ x2
+                    (दीनन की लाज राखो, शम्भु सुतवारी।
+                    कामना को पूर्ण करो, जग बलिहारी॥ x2)
+                </p>
+                <p class="english">
+                    ‘Sur’ Shyam Sharan Aaye, Safal Kije Seva.
+                    Mata Jaki Parvati, Pita Mahadeva॥ x2
+                    (Deenan Ki Laaj Rakho, Shambhu Sutwari।
+                    Kamana Ko Purn Karo, Jag Balihari॥ x2)
+                </p>
+                <p class="devanagari">
+                    जय गणेश, जय गणेश, जय गणेश देवा。
+                    माता जाकी पार्वती, पिता महादेवा॥ x2
+                </p>
+                <p class="english">
+                    Jaya Ganesh, Jaya Ganesh, Jaya Ganesh Deva.
+                    Mata Jaki Parvati, Pita Mahadeva॥ x2
+                </p>
+            </div>
 
-        <div class="separator">***</div>
+            <div class="separator">ॐ</div>
 
-        <div class="prayer">
-            <h3>कर्पूर गौरं</h3>
-            <p class="devanagari">
-                कर्पूरगौरं करुणावतारं
-                संसारसारम् भुजगेन्द्रहारम् ।
-                सदावसन्तं हृदयारविन्दे
-                भवं भवानीसहितं नमामि ॥
-            </p>
-            <p class="english">
-                Karpurgauram Karunavataram
-                Sansarasaram Bhujagendraharaṁ ।
-                Sadavasantam Hridayaravinde
-                Bhavam Bhavanisahitam Namami ॥
-            </p>
-            <p class="devanagari">
-                ॐ एकदन्ताय विद्धमहे, वक्रतुण्डाय धीमहि, तन्नो दन्ति प्रचोदयात्॥
-            </p>
-            <p class="english">
-                Om Ekadantaya Viddhamahe, Vakratundaya Dhimahi, Tanno Danti Prachodayat॥
-            </p>
-        </div>
-
-        <div class="separator">***</div>
-
-        <div class="prayer">
-            <h3>मंत्रपुष्पांजलि</h3>
-            <p class="devanagari">
-                ॐ यज्ञेन यज्ञमयजंत देवास्तानि धर्माणि प्रथमान्यासन् ।
-                ते ह नाकं महिमान: सचंत यत्र पूर्वे साध्या:संति देवा: ॥
-            </p>
-            <p class="english">
-                Om Yajñena Yajñamayajanta Devastani Dharmani Prathamanyasan ।
-                Te Ha Nakam Mahimanah Sachant Yatra Purve Sadhyah Santi Devah ॥
-            </p>
-            <p class="devanagari">
-                ॐ राजाधिराजाय प्रसह्यसाहिने ।
-                नमो वयं वैश्रवणाय कुर्महे ।
-                स मे कामान् कामकामाय मह्यंकामेश्वरो वैश्रवणो ददातु ।
-                कुबेराय वैश्रवणाय महाराजाय नम: ।
-            </p>
-            <p class="english">
-                Om Rajadhirajaya Prasahyasahine ।
-                Namo Vayam Vaishravanaya Kurmahe ।
-                Sa Me Kaman Kamkamaya Mahyankameshvaro Vaishravano Dadatu ।
-                Kuberaya Vaishravanaya Maharajaya Namah ।
-            </p>
-            <p class="devanagari">
-                ॐ स्वस्ति ।
-                साम्राज्यं भौज्यं स्वाराज्यं वैराज्यं पारमेष्ठ्यं राज्यं महाराज्यमाधिपत्यमयं
-                समंतपर्याईस्यात् सार्वभौम: सार्वायुष आंतादापरार्धात् ।
-                पृथिव्यैसमुद्रपर्यंताया एकराळिती । तदप्येषश्लोकोऽभिगीतो “मरुत: परिवेष्टारो मरुत्तस्याऽवसन् गृहे । आविक्षितस्यकामप्रेर्विश्वेदेवा: सभासद” इति ।
-            </p>
-            <p class="english">
-                Om Swasti ।
-                Samrajyam Bhaujyam Swarajyam Vairajyam Parameshtyam Rajyam Maharajyamadhipatyamaya
-                Samantaparyaisyat Sarvabhaumah Sarvayush Antadaparardhat ।
-                Prithivyae Samudraparyantaya Ekaraliti । Tadapyeshshloko'bhigito “Marutah Pariveshtaro Maruttasya Avasan Gruhe । Avikshitasyakamaprer Vishvedevoh Sabhasad” iti ।
-            </p>
-        </div>
-
-    </div>
-</body>
-</html>
+            <div class="prayer">
+                <h3 id="ghalin_lotangan">घालीन लोटांगण</h3>
+                <p class="devanagari">
+                    घालीन लोटांगण वंदीन चरण ।
+                    डोळ्यांनी पाहिन रूप तुझे ।
+                    प्रेमें आलिंगीन आनंद पूजन ।
+                    भावे ओवाळिन म्हणे नामा ।।
+                </p>
+                <p class="english">
+                    Ghalin Lotangan Vandeen Charan ।
+                    Dolyanni Pahin Roop Tujhe ।
+                    Premen Alingin Anand Poojan ।
+                    Bhave Ovalin Mhane Nama ।।
+                </p>
+                <p class="devanagari">
+                    त्वमेव माता पिता त्वमेव ।
+                    त्वमेव बन्धु: सखा त्वमेव ।
+                    त्वमेव विद्या द्रविणं त्वमेव ।
+                    त्वमेव सर्वं मम देवदेव ।।
+                </p>
+                <p class="english">
+                    Tvameva Mata Pita Tvameva ।
+                    Tvameva Bandhu: Sakha Tvameva ।
+                    Tvameva Vidya Dravinam Tvameva ।
+                    Tvameva Sarvam Mama Devadev ।।
+                </p>
+                <p class="devanagari">
+                    कायेन वाचा मनसेंद्रियैर्वा ।
+                    बुध्यात्मना वा प्रकृति स्वभावात् ।
+                    करमि यद्यत् सकलं परस्मै ।
+                    नारायणायेती समर्पयामि ।।
+                </p>
+                <p class="english">
+                    Kayena Vacha Manasendriyarva ।
+                    Budhyatmana Va Prakriti Swabhavat ।
+                    Karami Yadyat Saklam Parsmai ।
+                    Narayanaayeti Samarpayami ।।
+                </p>
+                <p class="devanagari">
+                    अच्युतं केशवं राम नारायणम्
+                    कृष्णदामोदरं वासुदेवं भजे।
+                    श्रीधरं माधवं गोपिकावल्लभम्
+                    जानकीनायकं रामचंद्र भजे ।।
+                </p>
+                <p class="english">
+                    Achyutam Keshavam Ram Narayanam
+                    Krishna Damodaram Vasudevam Bhaje।
+                    Shridharam Madhavam Gopikavallabham
+                    Janakinaayakam Ramchandra Bhaje ।।
+                </p>
+                <p class="devanagari">
+                    हरे राम हरे
